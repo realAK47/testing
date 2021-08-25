@@ -1,0 +1,18 @@
+void iterative_postorder(Node *t)
+{
+        struct stack st;
+        while(t!=NULL || !isEmpty(st))
+        {
+            if(t!=NULL)
+            {
+                push(&st,t);
+                t=t->left;
+            }
+            else
+            {
+                printf("%d",t->data);
+                t=pop(&st);
+                t=t->right;
+            }
+        }
+}
